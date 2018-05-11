@@ -1,0 +1,10 @@
+.idea/*
+*.pyc
+*.swap
+*.pid
+.cache/*
+tests/.cache/*
+tests/__pycache__/*
+*.swp
+*.pye
+*.lic
