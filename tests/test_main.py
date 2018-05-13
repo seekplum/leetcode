@@ -19,6 +19,8 @@ import pytest
 
 
 def main():
+    """测试文件主函数
+    """
     # parametrize 中需要对每个测试用例指定id,对应不上会导致整个test文件无法运行
     curr_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -29,7 +31,7 @@ def main():
         pytest.main(file_path)
     else:
         print "文件: {} 不存在".format(file_path)
-        print("测试目录: {}".format(curr_path))
+        print "测试目录: {}".format(curr_path)
         # 测试整个目录下的文件
         pytest.main(curr_path)
 

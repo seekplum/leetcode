@@ -43,6 +43,8 @@ def length_of_longest_substring(s):
 
 
 def test():
+    """测试入口函数
+    """
     # s = "abcdderf"
     # s = "aaa"
     # s = "abac"

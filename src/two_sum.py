@@ -39,6 +39,7 @@ def two_sum1(nums, target):
             # 找到了符合要求的数据
             if (nums[i] + nums[j]) == target:
                 return [i, j]
+    return None
 
 
 def two_sum2(nums, target):
@@ -54,14 +55,18 @@ def two_sum2(nums, target):
     :return 两个数字的下标列表
     """
     hash_data = {}
-    for i in range(len(nums)):
-        interval = target - nums[i]
+    for val in nums:
+        interval = target - val
+        index = nums.index(val)
         if interval in hash_data:
-            return [hash_data[interval], i]
-        hash_data[nums[i]] = i
+            return [hash_data[interval], index]
+        hash_data[val] = index
+    return None
 
 
 def test():
+    """测试入口函数
+    """
     nums = [2, 1, 7, 5, 7]
     target = 9
     print two_sum1(nums, target)

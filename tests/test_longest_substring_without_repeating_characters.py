@@ -24,6 +24,14 @@ import pytest
     ("abac", 3),
     ("abcdafg", 6)
 ])
-def test_length_of_longest_substring(s, max_length):
+def test_length_of_long_substring(s, max_length):
+    """测试查找最长子串长度
+
+    :param s: 被查找的字符串
+    :type s str
+
+    :param max_length: 预期结果
+    :type max_length int
+    """
     from longest_substring_without_repeating_characters import length_of_longest_substring
     assert max_length == length_of_longest_substring(s)

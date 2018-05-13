@@ -18,47 +18,53 @@
 #=============================================================================
 """
 
-import sys
 import json
 
 
 class ListNode(object):
-    def __init__(self, x):
-        self.val = x
+    """节点树
+    """
+    def __init__(self, val):
+        """初始化参数
+
+        :param val: 节点的值
+        :type val int
+        """
+        self.val = val
         self.next_node = None
 
 
-def add_two_numbers(l1, l2):
+def add_two_numbers(node1, node2):
     """两个节点树进行相加
 
-    :param l1: 节点树1
-    :type l1: ListNode
+    :param node1: 节点树1
+    :type node1: ListNode
 
-    :param l2: 节点树2
-    :type l2: ListNode
+    :param node2: 节点树2
+    :type node2: ListNode
 
     :rtype: ListNode
     :return 相加后的节点树
     """
     carry = 0  # 需要进位的值
-    root = n = ListNode(0)  # 初始化两个节点
+    root = node = ListNode(0)  # 初始化两个节点
     # 当两个树中任一树还有值或者还需要进位处理
-    while l1 or l2 or carry:
-        v1 = v2 = 0
-        if l1:
-            v1 = l1.val
-            l1 = l1.next_node
+    while node1 or node2 or carry:
+        val1 = val2 = 0
+        if node1:
+            val1 = node1.val
+            node1 = node1.next_node
 
-        if l2:
-            v2 = l2.val
-            l2 = l2.next_node
+        if node2:
+            val2 = node2.val
+            node2 = node2.next_node
 
         # 处理相加大于 10 需要进位的情况
-        carry, value = divmod(v1 + v2 + carry, 10)
+        carry, value = divmod(val1 + val2 + carry, 10)
 
         # 把结果重新存入树中
-        n.next_node = ListNode(value)
-        n = n.next_node
+        node.next_node = ListNode(value)
+        node = node.next_node
     return root.next_node
 
 
@@ -107,14 +113,16 @@ def node_to_string(node):
 
 
 def test():
+    """测试入口函数
+    """
     # line = sys.stdin.readline()[:-1]
     line1 = "[1, 2, 3, 4, 9]"
-    l1 = string_to_node(line1)
+    node1 = string_to_node(line1)
     # line = sys.stdin.readline()[:-1]
     line2 = "[4, 9, 6]"
-    l2 = string_to_node(line2)
+    node2 = string_to_node(line2)
 
-    node = add_two_numbers(l1, l2)
+    node = add_two_numbers(node1, node2)
 
     result = node_to_string(node)
     print result

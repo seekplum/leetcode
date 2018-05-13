@@ -34,5 +34,18 @@ import pytest
     ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 3)
 ])
 def test_find_median_sorted_arrays(nums1, nums2, result):
+    """查找两个有序数组的中位数
+
+    对于两个数组长度之和是偶数，那么中位数就会有两个，需要取两个数的平均值
+
+    :param nums1 有序数组1
+    :type nums1: List[int]
+
+    :param nums2 有序数组2
+    :type nums2: List[int]
+
+    :param result 预期结果
+    :type result int | float
+    """
     from median_of_two_sorted_arrays import find_median_sorted_arrays
     assert result == find_median_sorted_arrays(nums1, nums2)

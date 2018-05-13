@@ -121,6 +121,8 @@ def _find_median(nums1, i, nums2, j, k):
 
 
 def test():
+    """测试入口函数
+    """
     # nums1, nums2 = [1, 2, 3, 4, 5], [1, 4]
     # nums1, nums2 = [4], [1, 4]
     nums1, nums2 = [1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7, 8]

@@ -22,10 +22,21 @@ import pytest
     ("[5, 4, 3]", "[7, 8, 9]", "[2, 3, 3, 1]")
 ])
 def test_add_two_numbers(line1, line2, result):
-    from add_two_numbers import string_to_node, node_to_string, add_two_numbers
-    l1 = string_to_node(line1)
-    l2 = string_to_node(line2)
+    """测试两数相加
 
-    node = add_two_numbers(l1, l2)
+    :param line1: 输入的字符串数组1
+    :type line1 str
+
+    :param line2: 输入的字符串数组2
+    :type line2 str
+
+    :param result: 预期结果
+    :type result str
+    """
+    from add_two_numbers import string_to_node, node_to_string, add_two_numbers
+    node1 = string_to_node(line1)
+    node2 = string_to_node(line2)
+
+    node = add_two_numbers(node1, node2)
 
     assert list(result) == list(node_to_string(node))
