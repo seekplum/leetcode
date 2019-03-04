@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 
@@ -51,4 +52,3 @@ def split(s, sep=None, maxsplit=None):
             yield s[j:]
 
     return [sub for sub in _split()]
-
