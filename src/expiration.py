@@ -69,7 +69,7 @@ def is_it_leap_year(year):
     return True if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0 else False
 
 
-def getExpirationDate(year, month, day):
+def getExpirationDate(year, month, day, n):
     """计算订单的到期日，订购时长为一个月
 
     :param year: 年份
@@ -81,16 +81,20 @@ def getExpirationDate(year, month, day):
     :param day: 日期号
     :type day int
 
+    :param n: 过期的月份
+    :type n in
+
     :rtype list
         [年, 月, 日]
     :return: 到期的时间
     """
-    # 12月份的下一个月是一年
-    if month == 12:
-        year += 1
-        month = 1
-    else:
-        month += 1
+
+    next_month = month + n
+
+    # % 12 可能会出现为 0 的情况
+    div, mod = divmod(next_month - 1, 12)
+    year += div
+    month = mod + 1
 
     # 获取下一个月的天数
     next_month_day = getattr(DateDay, DateMonth(month).name).value
