@@ -46,7 +46,7 @@ def tupload(ctx, name="private"):
 def check(ctx, job=4):
     """检查代码规范
     """
-    ctx.run("pylint --rcfile=.pylintrc -j %s --output-format parseable src --disable=W0622" % job,
+    ctx.run("pylint --rcfile=.pylintrc -j %s --output-format parseable src --disable=W0622,R0201" % job,
             echo=True)
     ctx.run("pylint --rcfile=.pylintrc -j %s --output-format parseable tests --ignore=test.py "
             "--disable=C0111,W0201,R0201" % job,

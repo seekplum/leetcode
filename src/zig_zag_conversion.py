@@ -21,6 +21,8 @@
 #=============================================================================
 """
 
+from .compat import xrange
+
 
 class Solution(object):
     """转换字符串
@@ -30,9 +32,26 @@ class Solution(object):
         """转换字符串
 
         解题思路:
-            由描述可知，在 (2 * numRows) - 1 后会有一次循环。第一行的元素位置对应原下标未 0, ((2 * numRows) - 1 -1 ) * n
+            记 k = 2 * (numRows - 1)
+            由描述可知，每k个字符有一次循环。
+            第一行: 0, k, 2k, ..., n * k
+            第二行: 1, 2k - 1, 2k + 1, 3k -1, 3k + 2..., n * k
+            第三行: 2, k, 2k, ..., n * k
+            第numRow -1行: numRow - 1, k + numRow - 1, 2k + numRow - 1, ..., n * k + numRow - 1
+
         :type s: str
         :type numRows: int
         :rtype: str
         """
-        pass
+        result = []
+        if numRows <= 1:
+            return s
+        n = numRows * 2 - 2
+        length = len(s)
+        for i in xrange(numRows):
+            for j in xrange(0, length, n):
+                if i + j < length:
+                    result.append(s[i + j])
+                if i % (n / 2) != 0 and j + n - i < length:
+                    result.append(s[j + n - i])
+        return "".join(result)
