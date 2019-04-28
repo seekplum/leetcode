@@ -1,12 +1,17 @@
-.idea/*
+# Python
+*.egg-info
+*.egg
 *.pyc
-*.swap
-*.pid
-.cache/*
-tests/.cache/*
-tests/__pycache__/*
-tests/.pytest_cache/*
-*.swp
-*.pye
-*.lic
+.cache
+test.py
+build
+dist
+
+# Translations
+*.mo
+.idea
+.DS_Store
+.vscode
+.pytest_cache
 .coverage
+.env

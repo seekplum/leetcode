@@ -15,8 +15,11 @@
 
 import pytest
 
+from src.longest_palindromic_substring import longest_palindrome
+
 
 @pytest.mark.parametrize("s, result", [
+    ("", ""),
     ("a", "a"),
     ("ab", "b"),
     ("aa", "aa"),
@@ -46,5 +49,4 @@ def test_longest_palindrome(s, result):
     :param result 预期结果
     :type result str
     """
-    from longest_palindromic_substring import longest_palindrome
     assert result == longest_palindrome(s)

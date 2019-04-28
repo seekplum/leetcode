@@ -39,19 +39,9 @@ def longest_palindrome(s):
 
 
 def expand_around_center(s, left, right):
+    """计算回文长度
+    """
     while left >= 0 and right < len(s) and s[left] == s[right]:
         left -= 1
         right += 1
     return right - left - 1
-
-
-def test():
-    """测试入口函数
-    """
-    s = "ababa"
-    result = longest_palindrome1(s)
-    print result
-
-
-if __name__ == '__main__':
-    test()

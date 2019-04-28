@@ -15,8 +15,12 @@
 
 import pytest
 
+from src.median_of_two_sorted_arrays import find_median_sorted_arrays
+
 
 @pytest.mark.parametrize("nums1, nums2, result", [
+    ([], [], 0),
+    ([], [2], 2),
     ([1], [2], 1.5),
     ([1], [2, 3], 2),
     ([1], [1, 2, 3], 1.5),
@@ -47,5 +51,4 @@ def test_find_median_sorted_arrays(nums1, nums2, result):
     :param result 预期结果
     :type result int | float
     """
-    from median_of_two_sorted_arrays import find_median_sorted_arrays
     assert result == find_median_sorted_arrays(nums1, nums2)

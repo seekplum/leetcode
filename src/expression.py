@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
+"""
+实现 eval 的功能，计算字符串表达式
+"""
+
 import re
 import collections
 
@@ -34,13 +38,16 @@ def generate_tokens(text):
 
 
 class ExpressionEvaluator(object):
+    """计算表达式的值"""
 
     def __init__(self):
+        """初始化"""
         self.tokens = None
         self.tok = None
         self.next_tok = None
 
     def parse(self, text):
+        """解析表达式"""
         self.tokens = generate_tokens(text)
         self.tok = None  # Last symbol consumed
         self.next_tok = None  # Next symbol token
@@ -61,8 +68,7 @@ class ExpressionEvaluator(object):
         if self.next_tok and self.next_tok.type == tok_type:
             self._advance()
             return True
-        else:
-            return False
+        return False
 
     def _expect(self, tok_type):
         """检查下个令牌类型是否正常
@@ -118,12 +124,3 @@ class ExpressionEvaluator(object):
             return expr_val
         else:
             raise SyntaxError('Expected NUMBER or LEFT PAREN')
-
-
-def descent_parser():
-    e = ExpressionEvaluator()
-    print(e.parse('2 + (3 + 4 * 5) * 6'))
-
-
-if __name__ == '__main__':
-    descent_parser()

@@ -14,6 +14,7 @@
 """
 import pytest
 
+from src.longest_substring_without_repeating_characters import length_of_longest_substring
 
 @pytest.mark.parametrize("s, max_length", [
     ("a", 1),
@@ -33,5 +34,4 @@ def test_length_of_long_substring(s, max_length):
     :param max_length: 预期结果
     :type max_length int
     """
-    from longest_substring_without_repeating_characters import length_of_longest_substring
     assert max_length == length_of_longest_substring(s)

@@ -62,16 +62,3 @@ def two_sum2(nums, target):
             return [hash_data[interval], index]
         hash_data[val] = index
     return None
-
-
-def test():
-    """测试入口函数
-    """
-    nums = [2, 1, 7, 5, 7]
-    target = 9
-    print two_sum1(nums, target)
-    print two_sum2(nums, target)
-
-
-if __name__ == '__main__':
-    test()

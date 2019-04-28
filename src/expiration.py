@@ -97,7 +97,7 @@ def getExpirationDate(year, month, day, n):
     month = mod + 1
 
     # 获取下一个月的天数
-    next_month_day = getattr(DateDay, DateMonth(month).name).value
+    next_month_day = getattr(DateDay, getattr(DateMonth(month), "name")).value
 
     # 闰年 2 月会多一天，天数是 29
     if month == DateMonth.Feb and is_it_leap_year(year):

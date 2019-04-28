@@ -13,6 +13,8 @@
 #=============================================================================
 """
 
+from __future__ import print_function
+
 from bisect import bisect_left
 from hashlib import md5
 from struct import unpack_from
@@ -53,10 +55,10 @@ def normal_hash():
     _max = max(node_stat)
     _min = min(node_stat)
 
-    print "Ave: {}".format(_ave)
-    print "Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave)
-    print "Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave)
-    print "Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS)
+    print("Ave: {}".format(_ave))
+    print("Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave))
+    print("Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave))
+    print("Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS))
 
 
 def consistency_hash1():
@@ -89,10 +91,10 @@ def consistency_hash1():
     _max = max(node_stat)
     _min = min(node_stat)
 
-    print "Ave: {}".format(_ave)
-    print "Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave)
-    print "Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave)
-    print "Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS)
+    print("Ave: {}".format(_ave))
+    print("Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave))
+    print("Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave))
+    print("Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS))
 
 
 def consistency_hash2():
@@ -132,17 +134,7 @@ def consistency_hash2():
     _max = max(node_stat)
     _min = min(node_stat)
 
-    print "Ave: {}".format(_ave)
-    print "Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave)
-    print "Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave)
-    print "Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS)
-
-
-def main():
-    normal_hash()
-    consistency_hash1()
-    consistency_hash2()
-
-
-if __name__ == '__main__':
-    main()
+    print("Ave: {}".format(_ave))
+    print("Max: {}, {:.2f}%".format(_max, (_max - _ave) * 100.0 / _ave))
+    print("Min: {}, {:.2f}%".format(_min, (_ave - _min) * 100.0 / _ave))
+    print("Change: {}, {:.2f}%".format(change, change * 100.0 / ITEMS))

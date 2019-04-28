@@ -26,7 +26,7 @@ def num_decoding(s):
     :return 解码次数
     :example 3
     """
-    if s is None or len(s) == 0 or s[0] == "0":
+    if s is None or s == "" or s[0] == "0":
         return 0
 
     n = len(s)

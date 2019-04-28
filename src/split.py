@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+对字符串解析分割
+"""
 
 
 def split(s, sep=None, maxsplit=None):
@@ -25,6 +28,8 @@ def split(s, sep=None, maxsplit=None):
         sep = " "
 
     def _split():
+        """切分字符串
+        """
         if maxsplit is not None and maxsplit == 0:
             yield s
             return

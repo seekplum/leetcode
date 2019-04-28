@@ -24,6 +24,7 @@ import json
 class ListNode(object):
     """节点树
     """
+
     def __init__(self, val):
         """初始化参数
 
@@ -110,23 +111,3 @@ def node_to_string(node):
         result.append(node.val)
         node = node.next_node
     return str(result)
-
-
-def test():
-    """测试入口函数
-    """
-    # line = sys.stdin.readline()[:-1]
-    line1 = "[1, 2, 3, 4, 9]"
-    node1 = string_to_node(line1)
-    # line = sys.stdin.readline()[:-1]
-    line2 = "[4, 9, 6]"
-    node2 = string_to_node(line2)
-
-    node = add_two_numbers(node1, node2)
-
-    result = node_to_string(node)
-    print result
-
-
-if __name__ == '__main__':
-    test()

@@ -15,12 +15,16 @@
 
 import pytest
 
+from src.character_combination import num_decoding
+
 
 @pytest.mark.parametrize("s, result", [
     ("12345", 3),
     ("1234510", 3),
     ("1234520", 3),
     ("1234526", 6),
+    ("", 0),
+    (None, 0),
 ])
 def test_add_two_numbers(s, result):
     """测试两数相加
@@ -33,5 +37,4 @@ def test_add_two_numbers(s, result):
     :type result int
     :example 3
     """
-    from character_combination import num_decoding
     assert num_decoding(s) == result

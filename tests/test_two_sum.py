@@ -15,6 +15,9 @@
 
 import pytest
 
+from src.two_sum import two_sum1
+from src.two_sum import two_sum2
+
 
 @pytest.mark.parametrize("nums, target, result", [
     ([1, 2, 3, 4, 5], 5, [0, 3]),
@@ -32,7 +35,6 @@ def test_two_sum1(nums, target, result):
     :param result 预期结果
     :type result int
     """
-    from two_sum import two_sum1
     assert two_sum1(nums, target) == result
 
 
@@ -52,5 +54,4 @@ def test_two_sum2(nums, target, result):
     :param result 预期结果
     :type result int
     """
-    from two_sum import two_sum2
     assert two_sum2(nums, target) == result

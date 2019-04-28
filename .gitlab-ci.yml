@@ -1,0 +1,21 @@
+before_script:
+  - pip install pipenv
+  - pipenv install --dev --skip-lock
+
+stages:
+ - check
+ - unittest
+
+check:
+  stage: check
+  script:
+    - inv check
+  tags:
+    - leetcode
+
+unittest:
+  stage: unittest
+  script:
+    - inv unittest
+  tags:
+    - leetcode

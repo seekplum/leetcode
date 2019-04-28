@@ -1,13 +1,20 @@
 [[source]]
-url = "https://pypi.org/simple"
+url = "https://pypi.douban.com/simple/"
 verify_ssl = true
-name = "pypi"
+name = "douban"
 
 [dev-packages]
+invoke = "*"
+bumpversion = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-benchmark = "*"
+mock = "*"
+twine = "*"
+coverage = "*"
+coveralls = "*"
+pylint = "==1.9.3"
 
 [packages]
-pytest = "==3.2.1"
-pylint = "==1.8.4"
 
 [requires]
-python_version = "2.7"

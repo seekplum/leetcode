@@ -15,11 +15,15 @@
 
 import pytest
 
+from src.add_two_numbers import string_to_node, node_to_string, add_two_numbers
+
 
 @pytest.mark.parametrize("line1, line2, result", [
     ("[1, 1]", "[1, 1]", "[2, 2]"),
     ("[1, 2, 3, 4, 9]", "[1, 1]", "[2, 3, 3, 4, 9]"),
-    ("[5, 4, 3]", "[7, 8, 9]", "[2, 3, 3, 1]")
+    ("[5, 4, 3]", "[7, 8, 9]", "[2, 3, 3, 1]"),
+    ("[5, 4, 3]", "[]", "[5, 4, 3]"),
+    ("[]", "[]", "[]")
 ])
 def test_add_two_numbers(line1, line2, result):
     """测试两数相加
@@ -33,7 +37,6 @@ def test_add_two_numbers(line1, line2, result):
     :param result: 预期结果
     :type result str
     """
-    from add_two_numbers import string_to_node, node_to_string, add_two_numbers
     node1 = string_to_node(line1)
     node2 = string_to_node(line2)
 

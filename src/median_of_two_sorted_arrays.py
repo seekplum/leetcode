@@ -63,8 +63,7 @@ def find_median_sorted_arrays(nums1, nums2):
     if _check_even(total):
         return (_find_median(nums1, 0, nums2, 0, total / 2) + _find_median(nums1, 0, nums2, 0, total / 2 + 1)) / 2.0
     # 数组长度之和为奇数
-    else:
-        return _find_median(nums1, 0, nums2, 0, total / 2 + 1)
+    return _find_median(nums1, 0, nums2, 0, total / 2 + 1)
 
 
 def _find_median(nums1, i, nums2, j, k):
@@ -116,22 +115,4 @@ def _find_median(nums1, i, nums2, j, k):
     elif nums1[p1 - 1] > nums2[p2 - 1]:
         return _find_median(nums1, i, nums2, p2, k - p2 + j)
     # 如果 1 的 目标 刚好在 2 的目录和 2 的目标前一位中间，那么这就是要找的 k
-    else:
-        return nums1[p1 - 1]
-
-
-def test():
-    """测试入口函数
-    """
-    # nums1, nums2 = [1, 2, 3, 4, 5], [1, 4]
-    # nums1, nums2 = [4], [1, 4]
-    nums1, nums2 = [1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7, 8]
-    # nums1, nums2 = [1, 2], [3, 4]
-    # nums1, nums2 = [1], [2]
-    # result = _find_median(nums1, nums2, 3, True)
-    result = find_median_sorted_arrays(nums1, nums2)
-    print result
-
-
-if __name__ == '__main__':
-    test()
+    return nums1[p1 - 1]

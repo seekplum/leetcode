@@ -40,18 +40,3 @@ def length_of_longest_substring(s):
     # 处理可能出现没有重复字符串情况
     max_length = max(max_length, len(sub))
     return max_length
-
-
-def test():
-    """测试入口函数
-    """
-    # s = "abcdderf"
-    # s = "aaa"
-    # s = "abac"
-    s = "abcdafg"
-    result = length_of_longest_substring(s)
-    print result
-
-
-if __name__ == '__main__':
-    test()
