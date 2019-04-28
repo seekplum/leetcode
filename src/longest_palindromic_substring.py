@@ -20,6 +20,10 @@
 #=============================================================================
 """
 
+from __future__ import division
+
+from .compat import xrange
+
 
 def longest_palindrome(s):
     """查找字符串中最长的回文字符串
@@ -33,8 +37,8 @@ def longest_palindrome(s):
         len2 = expand_around_center(s, i, i + 1)
         length = max(len1, len2)
         if length > (end - start):
-            start = i - (length - 1) / 2
-            end = i + length / 2
+            start = i - (length - 1) // 2
+            end = i + length // 2
     return s[start: end + 1]
 
 

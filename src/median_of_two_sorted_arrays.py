@@ -22,6 +22,8 @@
 #=============================================================================
 """
 
+from __future__ import division
+
 
 def _check_even(number):
     """检查数字是否为偶数
@@ -61,9 +63,9 @@ def find_median_sorted_arrays(nums1, nums2):
 
     # 数组长度之和为偶数
     if _check_even(total):
-        return (_find_median(nums1, 0, nums2, 0, total / 2) + _find_median(nums1, 0, nums2, 0, total / 2 + 1)) / 2.0
+        return (_find_median(nums1, 0, nums2, 0, total // 2) + _find_median(nums1, 0, nums2, 0, total // 2 + 1)) / 2.0
     # 数组长度之和为奇数
-    return _find_median(nums1, 0, nums2, 0, total / 2 + 1)
+    return _find_median(nums1, 0, nums2, 0, total // 2 + 1)
 
 
 def _find_median(nums1, i, nums2, j, k):
@@ -105,7 +107,7 @@ def _find_median(nums1, i, nums2, j, k):
 
     # 因为数组有序，那么进行二分查找
     # 注意数组 1 的长度，不要越界
-    p1 = min(m, i + k / 2)
+    p1 = min(m, i + k // 2)
     p2 = j + k - p1 + i
 
     # 如果 1 的 目标 小于 2 中的目标，那么在 1 的后面和 2 的前面开始查找

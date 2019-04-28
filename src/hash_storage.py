@@ -18,6 +18,7 @@ from __future__ import print_function
 from bisect import bisect_left
 from hashlib import md5
 from struct import unpack_from
+from .compat import xrange
 
 ITEMS = 10000000  # 所有值数量
 NODES = 100  # 节点数量1
